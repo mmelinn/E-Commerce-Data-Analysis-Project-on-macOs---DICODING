@@ -48,7 +48,7 @@ with st.sidebar:
     with col1:
         st.write(' ')
     with col2:
-        st.image("https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/blob/main/dashboard/logoDICODINGShop.png", width=200)
+        st.image("https://github.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/blob/main/dashboard/logoDICODINGShop.png", width=200)
     with col3:
         st.write(' ')
 
