@@ -11,16 +11,15 @@ SECONDARY_COLOR = "#2C3E50"
 TERTIARY_COLOR = "#24426D"
 
 sns.set(style='darkgrid', palette=[PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR])
-st.set_option('deprecation.showPyplotGlobalUse', False)
 
 datetime_columns = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", 
                     "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
 
-order_data = pd.read_csv("/Users/melindans/VSCODE/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard/df.csv")
+order_data = pd.read_csv("https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/refs/heads/main/dashboard/df.csv")
 order_data.sort_values(by="order_approved_at", inplace=True)
 order_data.reset_index(drop=True, inplace=True)
 
-geo_data = pd.read_csv('/Users/melindans/VSCODE/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard/geolocation.csv')
+geo_data = pd.read_csv('https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/refs/heads/main/dashboard/geolocation.csv')
 unique_customers = geo_data.drop_duplicates(subset='customer_unique_id')
 
 for column in datetime_columns:
@@ -49,7 +48,7 @@ with st.sidebar:
     with col1:
         st.write(' ')
     with col2:
-        st.image("/Users/melindans/VSCODE/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard/logoDICODINGShop.png", width=200)
+        st.image("https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/blob/main/dashboard/logoDICODINGShop.png", width=200)
     with col3:
         st.write(' ')
 
