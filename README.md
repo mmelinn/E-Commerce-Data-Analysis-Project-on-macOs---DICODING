@@ -40,6 +40,7 @@ Make sure Python is installed on your macOS system. It's best practice to use a 
 ### Running the Jupyter Notebook
 
 **To access and analyze the data, just run from the TextEditor (Visual Code Studio):**
+
     ```bash
     cd E-Commerce-Data-Analysis-Project-on-macOs---DICODING/notebook.ipynb
     ```
