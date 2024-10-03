@@ -41,9 +41,9 @@ Make sure Python is installed on your macOS system. It's best practice to use a 
 
 **To access and analyze the data, just run from the TextEditor (Visual Code Studio):**
 
-    ```bash
-    cd E-Commerce-Data-Analysis-Project-on-macOs---DICODING/notebook.ipynb
-    ```
+```bash
+cd E-Commerce-Data-Analysis-Project-on-macOs---DICODING/notebook.ipynb
+```
 
 ### Running the Streamlit
 
