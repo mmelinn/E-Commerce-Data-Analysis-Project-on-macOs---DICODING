@@ -42,10 +42,16 @@ Make sure Python is installed on your macOS system. It's best practice to use a 
 To access and analyze the data, just run from the TextEditor (Visual Code Studio):
     ```bash
     cd E-Commerce-Data-Analysis-Project-on-macOs---DICODING/notebook.ipynb
+    ```
 
 ### Running the Streamlit
 
-To access and analyze the data, open the Jupyter notebook by executing the command:
+1. **To access and analyze the data, open the Jupyter notebook by executing the command:**
     ```bash
     cd E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard
+    ```
+
+2. **Run it on Terminal**
+    ```bash
     streamlit run dashboard.py
+    ```
