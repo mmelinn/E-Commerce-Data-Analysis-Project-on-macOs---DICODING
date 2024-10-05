@@ -11,15 +11,16 @@ SECONDARY_COLOR = "#2C3E50"
 TERTIARY_COLOR = "#24426D"
 
 sns.set(style='darkgrid', palette=[PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR])
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 datetime_columns = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", 
                     "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
 
-order_data = pd.read_csv("https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/refs/heads/main/dashboard/df.csv")
+order_data = pd.read_csv("/Users/melindans/VSCODE/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard/df.csv")
 order_data.sort_values(by="order_approved_at", inplace=True)
 order_data.reset_index(drop=True, inplace=True)
 
-geo_data = pd.read_csv('https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/refs/heads/main/dashboard/geolocation.csv')
+geo_data = pd.read_csv('/Users/melindans/VSCODE/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard/geolocation.csv')
 unique_customers = geo_data.drop_duplicates(subset='customer_unique_id')
 
 for column in datetime_columns:
@@ -48,7 +49,7 @@ with st.sidebar:
     with col1:
         st.write(' ')
     with col2:
-        st.image("https://raw.githubusercontent.com/mmelinn/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/refs/heads/main/dashboard/logoDICODINGShop.png", width=200)
+        st.image("/Users/melindans/VSCODE/E-Commerce-Data-Analysis-Project-on-macOs---DICODING/dashboard/logoDICODINGShop.png", width=200)
     with col3:
         st.write(' ')
 
@@ -82,9 +83,6 @@ def apply_plot_style(ax, title, xlabel=None, ylabel=None):
     ax.grid(True, linestyle='--', alpha=0.6, color=TERTIARY_COLOR)
     sns.despine()
 
-def format_to_idr(value):
-    return f"Rp {value:,.0f}".replace(',', '.')
-
 st.title("DICODING-Shop Data Analysis")
 
 st.markdown(f"<h2 style='text-align: center; color:{TERTIARY_COLOR};'>Daily Orders Delivered</h2>", unsafe_allow_html=True)
@@ -97,7 +95,7 @@ with col_a:
 
 with col_b:
     total_revenue = daily_orders["revenue"].sum()
-    st.markdown(f"<h4 style='text-align: center;'>Total Revenue: {format_to_idr(total_revenue)}</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='text-align: center;'>Total Revenue: {total_revenue:.0f}</h4>", unsafe_allow_html=True)
 
 fig, ax = plt.subplots(figsize=(12, 6))
 sns.lineplot(
@@ -117,11 +115,11 @@ col_a, col_b = st.columns(2)
 
 with col_a:
     total_spending = customer_spending["total_spend"].sum()
-    st.markdown(f"<h4 style='text-align: center;'>Total Spending: {format_to_idr(total_spending)}</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='text-align: center;'>Total Spending: {total_spending:.0f}</h4>", unsafe_allow_html=True)
 
 with col_b:
     average_spending = customer_spending["total_spend"].mean()
-    st.markdown(f"<h4 style='text-align: center;'>Average Spending: {format_to_idr(average_spending)}</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='text-align: center;'>Average Spending: {average_spending:.0f}</h4>", unsafe_allow_html=True)
 
 fig, ax = plt.subplots(figsize=(12, 6))
 sns.lineplot(
