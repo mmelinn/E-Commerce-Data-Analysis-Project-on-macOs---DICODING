@@ -82,9 +82,6 @@ def apply_plot_style(ax, title, xlabel=None, ylabel=None):
     ax.grid(True, linestyle='--', alpha=0.6, color=TERTIARY_COLOR)
     sns.despine()
 
-def format_to_idr(value):
-    return f"Rp {value:,.0f}".replace(',', '.')
-
 st.title("DICODING-Shop Data Analysis")
 
 st.markdown(f"<h2 style='text-align: center; color:{TERTIARY_COLOR};'>Daily Orders Delivered</h2>", unsafe_allow_html=True)
