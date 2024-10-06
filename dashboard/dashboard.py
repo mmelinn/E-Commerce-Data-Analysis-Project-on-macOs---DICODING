@@ -167,8 +167,6 @@ ax[1].invert_yaxis()
 ax[1].yaxis.set_label_position("left")
 ax[1].yaxis.left()
 
-fig.tight_layout(pad=3.0)
-
 st.pyplot(fig)
 
 st.markdown(f"<h2 style='text-align: center; color:{TERTIARY_COLOR};'>Review Score Analysis</h2>", unsafe_allow_html=True)
