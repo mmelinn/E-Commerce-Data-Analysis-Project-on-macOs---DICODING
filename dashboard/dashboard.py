@@ -181,7 +181,7 @@ with col_b:
     st.markdown(f"<h4 style='text-align: center;'>Most Common Review Score: {common_review_score}</h4>", unsafe_allow_html=True)
 
 fig, ax = plt.subplots(figsize=(12, 6))
-color_palette = sns.color_palette([PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR], len(review_scores))
+color_palette = sns.color_palette([PRIMARY_COLOR], len(review_scores))
 
 sns.barplot(x=review_scores.index,
             y=review_scores.values,
@@ -207,7 +207,7 @@ with tab_state:
     sns.barplot(x=customer_states.customer_state.value_counts().index,
                 y=customer_states.customer_count.values, 
                 data=customer_states,
-                palette=[PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR],
+                palette=[PRIMARY_COLOR],
                 ax=ax)
 
     apply_plot_style(ax, "Customer Distribution by State", "State", "Number of Customers")
