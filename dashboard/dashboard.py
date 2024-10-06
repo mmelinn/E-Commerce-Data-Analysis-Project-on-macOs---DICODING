@@ -153,7 +153,7 @@ fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(16, 8))
 sns.barplot(x="product_count", 
             y="product_category_name_english", 
             data=item_sales.head(5), 
-            palette=[PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR], 
+            palette=[PRIMARY_COLOR], 
             ax=ax[0])
 apply_plot_style(ax[0], "Top Sold Products", "Sales Count", None)
 
