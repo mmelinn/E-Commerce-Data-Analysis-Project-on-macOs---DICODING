@@ -164,8 +164,10 @@ sns.barplot(x="product_count",
             ax=ax[1])
 apply_plot_style(ax[1], "Least Sold Products", "Sales Count", None)
 ax[1].invert_yaxis()
-ax[1].yaxis.set_label_position("right")
-ax[1].yaxis.tick_right()
+ax[1].yaxis.set_label_position("left")
+ax[1].yaxis.left()
+
+fig.tight_layout(pad=3.0)
 
 st.pyplot(fig)
 
