@@ -160,11 +160,11 @@ apply_plot_style(ax[0], "Top Sold Products", "Sales Count", None)
 sns.barplot(x="product_count", 
             y="product_category_name_english", 
             data=item_sales.sort_values(by="product_count", ascending=True).head(5), 
-            palette=[PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR], 
+            palette=[PRIMARY_COLOR], 
             ax=ax[1])
 apply_plot_style(ax[1], "Least Sold Products", "Sales Count", None)
-ax[1].yaxis.set_label_position("left")
-ax[1].yaxis.tick_left()
+ax[1].yaxis.set_label_position("right")
+ax[1].yaxis.tick_right()
 
 st.pyplot(fig)
 
