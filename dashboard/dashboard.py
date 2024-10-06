@@ -163,6 +163,7 @@ sns.barplot(x="product_count",
             palette=[PRIMARY_COLOR], 
             ax=ax[1])
 apply_plot_style(ax[1], "Least Sold Products", "Sales Count", None)
+ax[1].invert_yaxis()
 ax[1].yaxis.set_label_position("right")
 ax[1].yaxis.tick_right()
 
